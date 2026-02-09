@@ -1,0 +1,32 @@
+/* -------------------------------------------
+  Layout: Footer
+------------------------------------------- */
+
+.l-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* 画面下に配置（元CSSの再現） */
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+}
+
+.l-footer__menu {
+  display: flex;
+}
+
+.l-footer__menu-item {
+  font-size: 0.75rem;
+  margin-right: 30px;
+}
+
+.l-footer__menu-item:last-child {
+  margin-right: 0;
+}
+
+.l-footer__copyright {
+  font-size: 0.625rem;
+}
