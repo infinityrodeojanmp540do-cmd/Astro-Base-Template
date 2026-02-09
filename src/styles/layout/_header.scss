@@ -47,7 +47,7 @@
   opacity: 0;
 }
 
-.l-header__nav a {
+.l-header__nav-link {
   color: #fff;
 }
 
@@ -55,23 +55,13 @@
   margin-bottom: 14px;
 }
 
-/* 開いた状態（bodyに付ける想定） */
-.is-menu-open .l-header__nav {
-  left: 0;
-  opacity: 1;
-}
-
-/* -------------------------------------------
-  Hamburger button
-------------------------------------------- */
-
+/* toggle */
 .l-header__toggle {
   width: 30px;
   height: 30px;
   position: relative;
-  transition: all 0.5s;
   cursor: pointer;
-  z-index: 20;
+  z-index: 30;
   background: transparent;
   border: 0;
   padding: 0;
@@ -82,50 +72,44 @@
   position: absolute;
   width: 30px;
   height: 2px;
-  background-color: #333;
   border-radius: 4px;
+  background-color: #333;
   transition: all 0.5s;
 }
 
-.l-header__toggle span:nth-child(1) {
-  top: 10px;
-}
+.l-header__toggle span:nth-child(1) { top: 10px; }
+.l-header__toggle span:nth-child(2) { bottom: 10px; }
 
-.l-header__toggle span:nth-child(2) {
-  bottom: 10px;
-}
-
-/* 開いた状態：線を白に */
-.is-menu-open .l-header__toggle span {
-  background-color: #fff;
-}
-
-.is-menu-open .l-header__toggle span:nth-child(1) {
-  transform: translateY(4px) rotate(-45deg);
-}
-
-.is-menu-open .l-header__toggle span:nth-child(2) {
-  transform: translateY(-4px) rotate(45deg);
-}
-
-/* -------------------------------------------
-  Mask
-------------------------------------------- */
-
+/* overlay（閉じてる状態がデフォ） */
 .l-header__overlay {
   display: none;
-  transition: all 0.5s;
 }
 
-.is-menu-open .l-header__overlay {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  opacity: 0.8;
-  z-index: 10;
-  cursor: pointer;
+/* ✅ 状態クラスはここだけ */
+.l-header.is-open {
+  .l-header__nav {
+    left: 0;
+    opacity: 1;
+  }
+
+  .l-header__overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: #000;
+    opacity: 0.8;
+    z-index: 10;
+  }
+
+  .l-header__toggle span {
+    background-color: #fff;
+  }
+
+  .l-header__toggle span:nth-child(1) {
+    transform: translateY(4px) rotate(-45deg);
+  }
+
+  .l-header__toggle span:nth-child(2) {
+    transform: translateY(-4px) rotate(45deg);
+  }
 }
