@@ -1,0 +1,115 @@
+/* -------------------------------------------
+  Header
+------------------------------------------- */
+
+.l-header {
+  width: 100%;
+  height: 80px;
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+/* wrapper（共通）に “直で” 当てない。header専用ラッパーを噛ませる */
+.l-header__wrapper {
+  height: 100%;
+}
+
+.l-header__inner {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ロゴ */
+.l-header__logo a {
+  width: 180px;
+  line-height: 1;
+  display: block;
+}
+
+/* -------------------------------------------
+  Slide menu (nav)
+------------------------------------------- */
+
+.l-header__nav {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  color: #fff;
+  padding: 36px 50px;
+  transition: all 0.5s;
+  z-index: 20;
+  opacity: 0;
+}
+
+.l-header__nav-link {
+  color: #fff;
+}
+
+.l-header__nav-item {
+  margin-bottom: 14px;
+}
+
+/* toggle */
+.l-header__toggle {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+  z-index: 30;
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.l-header__toggle span {
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  border-radius: 4px;
+  background-color: #333;
+  transition: all 0.5s;
+}
+
+.l-header__toggle span:nth-child(1) { top: 10px; }
+.l-header__toggle span:nth-child(2) { bottom: 10px; }
+
+/* overlay（閉じてる状態がデフォ） */
+.l-header__overlay {
+  display: none;
+}
+
+/* ✅ 状態クラスはここだけ */
+.l-header.is-open {
+  .l-header__nav {
+    left: 0;
+    opacity: 1;
+  }
+
+  .l-header__overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: #000;
+    opacity: 0.8;
+    z-index: 10;
+  }
+
+  .l-header__toggle span {
+    background-color: #fff;
+  }
+
+  .l-header__toggle span:nth-child(1) {
+    transform: translateY(4px) rotate(-45deg);
+  }
+
+  .l-header__toggle span:nth-child(2) {
+    transform: translateY(-4px) rotate(45deg);
+  }
+}

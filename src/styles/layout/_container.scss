@@ -1,0 +1,15 @@
+/*
+コンテンツ幅を設定するための共通クラス
+*/
+.wrapper {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* main spacing */
+.content {
+  padding-top: 120px;
+  padding-bottom: 160px;
+}
