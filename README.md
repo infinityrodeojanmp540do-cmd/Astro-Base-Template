@@ -1,15 +1,31 @@
-Astro Base Template
+# Astro Base Template
 
-Astro + FLOCSS をベースにした、静的サイト制作向けのスターターテンプレートです。 Header / Footer / レイアウト / Sass 構成 / JS 分離までを含み、 このリポジトリを複製することで すぐに制作を開始できます。
+Astro + FLOCSS をベースにした、静的サイト制作向けのスターターテンプレートです。
 
-🚀 Features • Astro v5 • Sass（FLOCSS 設計） • Header / Footer コンポーネント分離 • Layout による共通構造 • JS / CSS の責務分離 • 学習・模写コーディング向け構成
+Header / Footer / レイアウト / Sass 構成 / JS 分離までを含み、  
+このリポジトリを複製することで、すぐに制作を開始できます。
 
-📁 Directory Structure
+---
+
+## 🚀 Features
+
+- Astro v5
+- Sass（FLOCSS 設計）
+- Header / Footer コンポーネント分離
+- Layout による共通構造
+- JS / CSS の責務分離
+- 学習・模写コーディング向け構成
+
+---
+
+## 📁 Directory Structure
+
+```txt
 src/
 ├ components/
-│ ├ layout/
-│ │ ├ Header.astro
-│ │ └ Footer.astro
+│ └ layout/
+│   ├ Header.astro
+│   └ Footer.astro
 │
 ├ layouts/
 │ └ Layout.astro
@@ -38,20 +54,19 @@ src/
   │
   └ style.scss
 
-  🧱 CSS Architecture (FLOCSS)
-	•	foundation/
-リセット・要素レベルのベーススタイル
-	•	layout/
-ヘッダー・フッターなどページ構造
-	•	object/
-	•	component: 再利用可能な小パーツ
-	•	project: ページ固有のUI
-	•	utility: 余白・表示制御など補助クラス
+🧱 CSS Architecture (FLOCSS)
+	•	foundationreset / element などのベース定義
+	•	layoutheader / footer / wrapper などページ構造
+	•	object
+	•	component：再利用可能UI
+	•	project：ページ固有UI
+	•	utility：余白・表示制御など補助クラス
 
-  🧠 Rules
-	•	JS用クラス → .js-*
-	•	見た目用クラス → .l-, .c-
-	•	状態 → .is-*
+クラス命名ルール
+	•	レイアウト：l-
+	•	コンポーネント：c-
+	•	状態：is-
+	•	JS用：js-	状態 → .is-*
 
   🔁 How to Use
 	1.	このリポジトリをコピー or clone
