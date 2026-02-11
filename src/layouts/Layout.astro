@@ -9,17 +9,13 @@ const { title = "Furniture Design" } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-
     <title>{title}</title>
-
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon.ico" />
   </head>
-
   <body>
     <slot />
 
-   <script type="module" src="/src/scripts/header-menu.js"></script>
-
+    <script type="module" src="/src/scripts/header-menu.js"></script>
   </body>
 </html>
