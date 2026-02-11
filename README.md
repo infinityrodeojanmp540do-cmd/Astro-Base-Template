@@ -1,64 +1,60 @@
-# Astro Starter Kit: Basics
+Astro Base Template
 
-```sh
-npm create astro@latest -- --template basics
-```
+Astro + FLOCSS をベースにした、静的サイト制作向けのスターターテンプレートです。 Header / Footer / レイアウト / Sass 構成 / JS 分離までを含み、 このリポジトリを複製することで すぐに制作を開始できます。
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+🚀 Features • Astro v5 • Sass（FLOCSS 設計） • Header / Footer コンポーネント分離 • Layout による共通構造 • JS / CSS の責務分離 • 学習・模写コーディング向け構成
 
-## 🚀 Project Structure
+📁 Directory Structure
+src/
+├ components/
+│ ├ layout/
+│ │ ├ Header.astro
+│ │ └ Footer.astro
+│
+├ layouts/
+│ └ Layout.astro
+│
+├ pages/
+│ └ index.astro
+│
+├ scripts/
+│ └ header-menu.js
+│
+└ styles/
+  ├ foundation/
+  │ ├ _index.scss
+  │ ├ _reset.scss
+  │ └ _element.scss
+  │
+  ├ layout/
+  │ ├ _header.scss
+  │ ├ _footer.scss
+  │ └ _index.scss
+  │
+  ├ object/
+  │ ├ component/
+  │ ├ project/
+  │ └ utility/
+  │
+  └ style.scss
 
-Inside of your Astro project, you'll see the following folders and files:
+  🧱 CSS Architecture (FLOCSS)
+	•	foundation/
+リセット・要素レベルのベーススタイル
+	•	layout/
+ヘッダー・フッターなどページ構造
+	•	object/
+	•	component: 再利用可能な小パーツ
+	•	project: ページ固有のUI
+	•	utility: 余白・表示制御など補助クラス
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+  🧠 Rules
+	•	JS用クラス → .js-*
+	•	見た目用クラス → .l-, .c-
+	•	状態 → .is-*
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-<!-- 初期手順 -->
-
-# codejump-store-astro
-
-## 環境ベース（確定）
-- Framework: Astro
-- Template: Basic
-- Output: static（予定）
-- Node: v22.x
-- Package manager: npm
-
-## 初期構築手順
-1. GitHubで新規リポジトリ作成　ウェブにて
-2. git clone
-3. npm create astro@latest .
-4. npm run dev で起動確認
-5. main に初回コミット（環境ベース固定）
+  🔁 How to Use
+	1.	このリポジトリをコピー or clone
+	2.	pages / components を追加
+	3.	styles を拡張
+	4.	新規案件用のベースとして利用
